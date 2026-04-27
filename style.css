@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+header input {
+  margin-top: 10px;
+  padding: 12px;
+  width: 60%;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* Movies Grid */
+#movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.movie {
+  width: 200px;
+  margin: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.movie:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0,198,255,0.7);
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  padding: 10px;
+}
+
+/* Loading */
+#loading {
+  text-align: center;
+  font-size: 18px;
+}
+.hidden {
+  display: none;
+}
+
+/* Fullscreen Modal */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1000;
+}
+
+#modal.active {
+  display: block;
+}
+
+/* Background Poster */
+#movieDetails {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Dark gradient overlay */
+#movieDetails::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3));
+}
+
+/* Text content */
+.details-content {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.details-content h1 {
+  font-size: 40px;
+  color: #00c6ff;
+  margin: 0 0 10px;
+}
+
+.details-content p {
+  margin: 8px 0;
+}
+
+.rating {
+  color: gold;
+  font-size: 20px;
+}
+
+/* Close button */
+#close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 3;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header input { width: 90%; }
+  .movie { width: 150px; }
+  .details-content { left: 20px; right: 20px; }
+  .details-content h1 { font-size: 28px; }
+}

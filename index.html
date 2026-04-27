@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Movie Finder</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Sphere</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+  <!-- HEADER -->
   <header>
-    <h1>🎬 Movie Finder</h1>
-    <input id="search" type="text" placeholder="Search movies (e.g., avengers)" />
+    <h1>🎬 Movie Sphere</h1>
+    <input 
+      type="text" 
+      id="search" 
+      placeholder="Search movies in MovieSphere..."
+    >
   </header>
 
+  <!-- LOADING -->
   <div id="loading" class="hidden">Loading...</div>
 
+  <!-- MOVIE LIST -->
   <main id="movies"></main>
 
-  <!-- Fullscreen Modal -->
+  <!-- FULLSCREEN MOVIE VIEW -->
   <div id="modal">
     <div id="movieDetails"></div>
     <span id="close">✖</span>
   </div>
 
+  <!-- SCRIPT -->
   <script src="script.js"></script>
+
 </body>
 </html>
